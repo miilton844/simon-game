@@ -8,10 +8,12 @@ $(document).on('keydown', function () {
     if (level == 0) {
         ++level
         document.getElementById('level-title').innerHTML = 'level ' + level;
-        let randomChosenColor = nextSequence();
-        $("#" + randomChosenColor).fadeOut(100).fadeIn(100)
-        gamePattern.push(randomChosenColor);
-    }
+        setTimeout(function () {
+            let randomChosenColor = nextSequence();
+            $("#" + randomChosenColor).fadeOut(500).fadeIn(500);
+            gamePattern.push(randomChosenColor);
+        }, 1000);
+}
 })
 
 function nextSequence() {
